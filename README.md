@@ -4,6 +4,10 @@ Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7
 ### Agenda
 - html & css basics
 - javascript
+  - events (e.g. [onmouseenter](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter), [onmouseleave](https://developer.mozilla.org/en-US/docs/Web/Events/mouseleave))
+  - [jQuery](https://jquery.com/)
+  - [immediately invoked function expression](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
+  - [bower](http://bower.io/)
 - mvc 6
 - bootstrap
 - entity framework 7
