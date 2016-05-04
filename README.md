@@ -9,6 +9,11 @@ Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7
   - [immediately invoked function expression](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
   - [bower](http://bower.io/)
 - mvc 6
+  - startup.cs
+    - services.AddMvc()
+    - app.UseMvc(config => config.MapRoute(name: "Default", template: "{controller}/{action}/{id?}), defaults: new {controller = "App", action = "Index"})
+  - package.json
+    - Microsoft.AspNet.Mvc
 - bootstrap
 - entity framework 7
 - creating the api
