@@ -14,7 +14,10 @@ Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7
     - app.UseMvc(config => config.MapRoute(name: "Default", template: "{controller}/{action}/{id?}), defaults: new {controller = "App", action = "Index"})
   - package.json
     - Microsoft.AspNet.Mvc
-- bootstrap
+- [bootstrap](http://getbootstrap.com/)
+  - edit bower.json - bootstrap : 3.3.4
+  - [bootswatch](https://bootswatch.com/)
+  - grid system (12 columns)
 - entity framework 7
 - creating the api
 - aspnetcore identity
