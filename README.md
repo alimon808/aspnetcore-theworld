@@ -18,7 +18,12 @@ Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7
   - edit bower.json - bootstrap : 3.3.4
   - [bootswatch](https://bootswatch.com/)
   - grid system (12 columns)
-- entity framework 7
+- [entity framework 7](http://docs.efproject.net/en/latest/)
+  - [entities] (http://docs.efproject.net/en/latest/modeling/index.html)
+  - [DbContext](http://docs.efproject.net/en/latest/miscellaneous/configuring-dbcontext.html)
+  - seeding & creating db
+  - [repository pattern](https://msdn.microsoft.com/en-us/library/ff649690.aspx)
+  - [logging](http://docs.efproject.net/en/latest/miscellaneous/logging.html)
 - creating the api
 - aspnetcore identity
 - angularjs
