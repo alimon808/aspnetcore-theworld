@@ -22,7 +22,13 @@ namespace TheWorld
         public void Configure(IApplicationBuilder app)
         {
             app.UseStaticFiles();
-            app.UseMvc();            
+            app.UseMvc(config => {
+                config.MapRoute(
+                    name: "Default",
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new { controller = "App", action = "Index" }
+                    );
+            });            
         }
 
         // Entry point for the application.
