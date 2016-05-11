@@ -25,6 +25,10 @@ namespace TheWorld
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<WorldContext>();
+
+            services.AddTransient<WorldContextSeedData>();
+
+
 #if DEBUG
             services.AddScoped<IMailService, DebugMailService>();
 #else
@@ -32,7 +36,7 @@ namespace TheWorld
 #endif
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, WorldContextSeedData seeder)
         {
             app.UseStaticFiles();
             app.UseMvc(config => {
@@ -41,7 +45,9 @@ namespace TheWorld
                     template: "{controller}/{action}/{id?}",
                     defaults: new { controller = "App", action = "Index" }
                     );
-            });            
+            });
+
+            seeder.EnsureSeedData();
         }
 
         public static void Main(string[] args) => Microsoft.AspNet.Hosting.WebApplication.Run<Startup>(args);
