@@ -1,10 +1,13 @@
+using AutoMapper;
 using Microsoft.AspNet.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.PlatformAbstractions;
+using Newtonsoft.Json.Serialization;
 using TheWorld.Models;
 using TheWorld.Services;
+using TheWorld.ViewModels;
 
 namespace TheWorld
 {
@@ -21,7 +24,10 @@ namespace TheWorld
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(opt => {
+                    opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                });
             services.AddLogging();
             services.AddEntityFramework()
                 .AddSqlServer()
@@ -41,6 +47,9 @@ namespace TheWorld
         {
             loggerFactory.AddDebug(LogLevel.Warning);
             app.UseStaticFiles();
+            Mapper.Initialize(config => {
+                config.CreateMap<Trip, TripViewModel>().ReverseMap();
+            });
             app.UseMvc(config => {
                 config.MapRoute(
                     name: "Default",
