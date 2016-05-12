@@ -24,8 +24,9 @@ Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7
   - seeding & creating db
   - [repository pattern](https://msdn.microsoft.com/en-us/library/ff649690.aspx)
   - [logging](http://docs.efproject.net/en/latest/miscellaneous/logging.html)
-- creating the api
-- aspnetcore identity
+- REST apis
+  - [Postman](https://www.getpostman.com/)
+- Authorization and Authentication using [Identity](https://docs.asp.net/en/latest/security/authentication/introduction-to-aspnet-identity.html)
 - angularjs
 - angularjs routing
 - aspnetcore deployment
