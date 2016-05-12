@@ -1,7 +1,7 @@
 # aspnetcore-theworld
 Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7-bootstrap-angular-web-app/table-of-contents) by Shawn Wildermuth.  Building web app with aspnetcore, mvc6, ef7 and angularjs
 
-### Agenda
+### Modules
 - html & css basics
 - javascript
   - events (e.g. [onmouseenter](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter), [onmouseleave](https://developer.mozilla.org/en-US/docs/Web/Events/mouseleave))
