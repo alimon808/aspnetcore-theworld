@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNet.Authentication.Cookies;
 using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -66,16 +67,24 @@ namespace TheWorld
             services.AddTransient<WorldContextSeedData>();
             services.AddScoped<IWorldRepository, WorldRepository>();
 
-#if DEBUG
             services.AddScoped<IMailService, DebugMailService>();
-#else
-            services.AddScoped<IMailService, MailService>();
-#endif
+            //services.AddScoped<IMailService, MailService>();
         }
 
-        public async void Configure(IApplicationBuilder app, WorldContextSeedData seeder, ILoggerFactory loggerFactory)
+        public async void Configure(IApplicationBuilder app, WorldContextSeedData seeder, ILoggerFactory loggerFactory, IHostingEnvironment env)
         {
-            loggerFactory.AddDebug(LogLevel.Warning);
+
+            if (env.IsDevelopment())
+            {
+                loggerFactory.AddDebug(LogLevel.Information);
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                loggerFactory.AddDebug(LogLevel.Error);
+                app.UseExceptionHandler("/App/Error");
+            }
+
 
             app.UseStaticFiles();
 
