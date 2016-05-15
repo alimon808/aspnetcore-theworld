@@ -29,4 +29,7 @@ Pluralsight [course](https://app.pluralsight.com/library/courses/aspdotnet-5-ef7
 - Authorization and Authentication using [Identity](https://docs.asp.net/en/latest/security/authentication/introduction-to-aspnet-identity.html)
 - angularjs
 - angularjs routing
-- aspnetcore deployment
+- deployment
+  - [gulp] (http://gulpjs.com)
+  - [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+  - [gulp-gn-annotate](https://www.npmjs.com/package/gulp-ng-annotate)
